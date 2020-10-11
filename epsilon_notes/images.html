@@ -57,6 +57,7 @@ table, img, blockquote, pre {
 <li class="toc"><a href="#convenience-attributes">Convenience attributes</a></li>
 </ul>
 </ul>
+<style>*{font-family:sans-serif}</style>
 <p><a href="index.html">Go back to Index</a></p>
 <h2 id="placing-an-image-in-your-document">Placing an image in your document</h2>
 <p>To place an image in your document you need to provide path to it in the format <code>![any image name](image_file.jpg)</code>.</p>
@@ -94,6 +95,9 @@ table, img, blockquote, pre {
 <p>I wrote <code>![image](ostrich.jpg){set=right}</code> and this picture is now on the right.</p>
 <p>If you write <code>![image](ostrich.jpg){set=left}</code>, then the picture will be on the left side of the screen.</p>
 <p>And if you write <code>![image](ostrich.jpg){set=icon}</code> then you can make an inline icon <img src="images/ostrich.jpg" alt="image" style="height:1em;width:auto;display:inline" /> out of your picture and place it right in your text.</p>
+<p>You can also combine (use together) several attributes. Just write them separated with a SPACE.</p>
+<p>For example, if you would like to use a bigger icon in your text, you can write something like <code>![image](images/ostrich.jpg){set=icon height=2em width=auto}</code> and you will get a bigger <img src="images/ostrich.jpg" alt="image" style="height:1em;width:auto;display:inline;width:auto;height:2em" /> image.</p>
+<p>The values that you can use with attributes (1px, 2em, 30%) are standard CSS parameters. This is out of the scope of this lesson.</p>
 <p><a href="index.html">Go back to Index</a></p>
 <script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
 
