@@ -1,0 +1,102 @@
+<html> 
+<head>
+<meta charset="utf-8">
+ 
+<title>Images</title>
+
+</head> 
+<body>
+
+<style>html{
+    line-height:150%;
+    word-wrap:break-word;
+    background:#ECEFF1;
+    color:#1a2327;
+}
+
+em,strong{
+    color:black;
+}
+
+ul{
+    padding-left:1.5em;
+}
+code,pre,blockquote{tab-size:1;}
+
+code,pre,blockquote{
+    background:#CFD8DC;
+    color:#37474F;
+}
+
+pre{
+    padding: 10px 10px 10px 10px;font-family:monospace;
+    font-size:95%;line-height:150%;
+    white-space: pre; white-space: pre-wrap;
+    border-radius:10px;border: 1px solid #B0BEC5;
+}
+
+code{
+    font-family: monospace;font-size: 95%;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #B0BEC5;}noheader th{display:none;}th{background:#CFD8DC;}tbody tr:nth-child(even){background:#CFD8DC;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #B0BEC5;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #B0BEC5;}:active,:focus {outline: none;} a{color:#455A64;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #B0BEC5;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #1a2327;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#1a2327;color:#ECEFF1;
+}
+
+hr, kbd{
+    border:1px solid #B0BEC5;}p{text-align:justify;
+}
+
+table, img, blockquote, pre {
+    box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
+}</style>
+
+<h1 id="title" style="text-align:center;">Images</h1>
+<h2 id="toc_title" class="nocount">Contents</h2>
+<ul id="toc">
+<ul>
+<li class="toc"><a href="#placing-an-image-in-your-document">Placing an image in your document</a></li>
+<li class="toc"><a href="#image-attributes">Image Attributes</a></li>
+<li class="toc"><a href="#convenience-attributes">Convenience attributes</a></li>
+</ul>
+</ul>
+<p><a href="index.html">Go back to Index</a></p>
+<h2 id="placing-an-image-in-your-document">Placing an image in your document</h2>
+<p>To place an image in your document you need to provide path to it in the format <code>![any image name](image_file.jpg)</code>.</p>
+<p>Suppose, you have an image file called <code>ostrich.jpg</code>. If you write the text <code>![ostrich](ostrich.jpg)</code> in your text, you will get an image as follows:</p>
+<p><img src="images/ostrich.jpg" alt="ostrich" /></p>
+<h2 id="image-attributes">Image Attributes</h2>
+<p>Right next to your image path you may provide the image attributes in {curly brackets}. For example, like this:</p>
+<ul>
+<li><code>![image](image.jpg){height=100px width=200px}</code></li>
+<li><code>![image](image.jpg){width=30%}</code></li>
+<li><code>![image](image.jpg){class=myImage style=&quot;width:30%; height:auto&quot;}</code></li>
+</ul>
+<p>The main attributes supported by Epsilon Notes are:</p>
+<ul>
+<li><code>id</code> - used to add an <code>id</code> attribute for HTML manipulations</li>
+<li><code>class</code> - used to add a <code>class</code> attribute for HTML manipulations</li>
+<li><code>style</code> - used to change the picture with CSS styling</li>
+<li><code>height</code> - a convenience attribute that is automatically converted to the <code>style=&quot;height:value;&quot;</code> after rendering.</li>
+<li><code>width</code> - the same as height but width 😁</li>
+</ul>
+<p>Maybe you have already noted that if your attribute value has a space, then the value must be surrounded with &quot;quotes&quot;.</p>
+<p>So, you can write:</p>
+<p><code>style=height:50px;width:auto</code></p>
+<p>But if you add a SPACE, put it in quotemarks:</p>
+<p><code>style=&quot;height:50px; width:auto&quot;</code></p>
+<h2 id="convenience-attributes">Convenience attributes</h2>
+<p>Epsilon Notes also provides convenience attributes that can be used only in Epsilon Notes, which are</p>
+<ul>
+<li><code>set=left</code></li>
+<li><code>set=right</code></li>
+<li><code>set=icon</code></li>
+</ul>
+<p>The <code>{set=left}</code> attribute is used to put your picture on the left. Like this:</p>
+<p><img src="images/ostrich.jpg" alt="image" style="width:40%;float:right;padding:1px;margin-left:10px;width:20%" /></p>
+<p>I wrote <code>![image](ostrich.jpg){set=right}</code> and this picture is now on the right.</p>
+<p>If you write <code>![image](ostrich.jpg){set=left}</code>, then the picture will be on the left side of the screen.</p>
+<p>And if you write <code>![image](ostrich.jpg){set=icon}</code> then you can make an inline icon <img src="images/ostrich.jpg" alt="image" style="height:1em;width:auto;display:inline" /> out of your picture and place it right in your text.</p>
+<p><a href="index.html">Go back to Index</a></p>
+<script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
+
+</body>
+</html>
+    
