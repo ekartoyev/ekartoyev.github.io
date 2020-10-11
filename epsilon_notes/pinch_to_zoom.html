@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
  
-<title>Welcome to Epsilon Notes Wiki</title>
+<title>Pinch to Zoom</title>
 
 </head> 
 <body>
@@ -52,20 +52,12 @@ table, img, blockquote, pre {
     box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
 }</style>
 
-<h1 id="title" style="text-align:center;">Welcome to Epsilon Notes Wiki</h1>
-<p>Below are the topics covered in this wiki.</p>
-<h2 id="images">Images</h2>
-<ul>
-<li><a href="images.html">Images and image attributes</a> - here you can read how you can add pictures to your documents and add attributes to them to place your pictures on the left, right or make an inline icon.</li>
-</ul>
-<h2 id="tables">Tables</h2>
-<ul>
-<li><a href="sortable_tables.html">Sortable tables</a> - In Epsilon Notes you can sort tables using a <code>&lt;sortable&gt;</code> tag.</li>
-</ul>
-<h2 id="miscellaneous">Miscellaneous</h2>
-<ul>
-<li><a href="pinch_to_zoom.html">Pinch to zoom</a> - To make font bigger or smaller in the edit mode, you only need to pinch the screen to zoom in or out.</li>
-</ul>
+<h1 id="title" style="text-align:center;">Pinch to Zoom</h1>
+<p><a href="index.html">Go back to Index</a></p>
+<style>img{max-width:300}</style>
+<p>To change the size of the font in the Edit mode screen, you need to make it bigger or smaller with two fingers. This function is called Pinch-To-Zoom. Like this:</p>
+<p><img src="images/pinch_to_zoom.png" alt="image" /></p>
+<p><a href="index.html">Go back to Index</a></p>
 <script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
 
 </body>
