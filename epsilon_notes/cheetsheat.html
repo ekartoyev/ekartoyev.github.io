@@ -1,0 +1,96 @@
+<html> 
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+ 
+<title>Main CommonMark Markups</title>
+
+</head> 
+<body>
+
+<style>* {
+    font-family:sans-serif;
+}
+
+html{
+    line-height:150%;
+    word-wrap:break-word;
+    background:#E0F2F1;
+    color:#00352c;
+}
+
+em,strong{
+    color:black;
+}
+
+ul{
+    padding-left:1.5em;
+}
+code,pre,blockquote{tab-size:1;}
+
+code,pre,blockquote{
+    background:#B2DFDB;
+    color:#00695C;
+}
+
+pre{
+    padding: 10px 10px 10px 10px;font-family:monospace;
+    font-size:95%;line-height:150%;
+    white-space: pre; white-space: pre-wrap;
+    border-radius:10px;border: 1px solid #80CBC4;
+}
+
+code{
+    font-family: monospace;font-size: 95%;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #80CBC4;}noheader th{display:none;}th{background:#B2DFDB;}tbody tr:nth-child(even){background:#B2DFDB;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #80CBC4;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #80CBC4;}:active,:focus {outline: none;} a{color:#00796B;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #80CBC4;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #00352c;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#00352c;color:#E0F2F1;
+}
+
+hr, kbd{
+    border:1px solid #80CBC4;}p{text-align:justify;
+}
+
+table, img, blockquote, pre {
+    box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
+}</style>
+<h1 id="title" style="text-align:center;">Main CommonMark Markups</h1>
+<style> tbody tr, tbody tr:nth-child(even) {background:white;} pre,code {background:white} td {width:50%}</style>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+<table>
+<thead>
+<tr><th>CommonMark</th><th>Result</th></tr>
+</thead>
+<tbody>
+<tr><td><code>To write on a new line, write two spaces</code> <kbd>Space</kbd><kbd>Space</kbd><kbd>Enter</kbd> <br> <code>and press Enter at the end of line</code></td><td>To write on a new line, write two spaces <br> and press Enter at the end of line</td></tr>
+<tr><td><code>To write on a new paragraph, write two enters</code> <kbd>Enter</kbd><br><kbd>Enter</kbd><br> <code>at the end of line</code></td><td>To write on a new paragraph, write two enters <br><br> at the end of line</td></tr>
+<tr><td><code>This is **bold** text</code></td><td>This is <strong>bold</strong> text</td></tr>
+<tr><td><code>This is _italic_ text</code></td><td>This is <em>italic</em> text</td></tr>
+<tr><td><code>This is **_bold and italic_**</code></td><td>This is <strong><em>bold and italic</em></strong></td></tr>
+<tr><td><code>This is ++underlined++ text</code></td><td>This is <u>underlined</u> text</td></tr>
+<tr><td><code>This is ~~strikethrough~~ text</code></td><td>This is <del>strikethrough</del> text</td></tr>
+<tr><td><code>This is ==highlighted== text</code></td><td>This is <mark>highlighted</mark> text</td></tr>
+<tr><td><code>This text has a superscript^^2^^</code></td><td>This text has a superscript<sup>2</sup></td></tr>
+<tr><td><code>This text has a piece of `code`</code></td><td>This text has a piece of <code>code</code></td></tr>
+<tr><td><code># Top heading</code></td><td><h1> Top heading </h1></td></tr>
+<tr><td><code>## Heading 2</code></td><td><h2> Heading 2</h2></td></tr>
+<tr><td><code>### heading 3</code></td><td><h3> Heading 3</h1></td></tr>
+<tr><td><code>Use Html to make &lt;font color=&quot;darkblue&quot;&gt;**TEXT**&lt;/font&gt; darkblue</code></td><td>Use Html to make <font color="darkblue"><strong>TEXT</strong></font> darkblue</td></tr>
+<tr><td><code>To make a link, write a [link](http://google.com)</code></td><td>To make a link, write a <a href="http://google.com">link</a></td></tr>
+<tr><td><code>Or make a link this way <br>[link][1]<br>...<br>...<br>[1]: <a href="http://google.com">http://google.com</a><code></td><td>Or make a link this way <br> <a href="http://google.com">link</a></td></tr>
+<tr><td><code>To make a link to a picture, write a link to it</code><br> <code>![link](http://www.a.com/b.png)</code></td><td>To make a link to a picture, write a link to it <div style="width:20%; margin:auto"> <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="link" /> </div></td></tr>
+<tr><td><code>Make a numbered bullet list</code><br><code>1. point 1</code> <br> <code>1. point 2</code></td><td>Make a numbered bullet list<br> 1. point 1 <br>  2. point 2</td></tr>
+<tr><td><code>Make an unnumbered bullet list</code><br><code>* point 1</code> <br> <code>* point 2</code></td><td>Make an unnumbered bullet list<br> • point 1 <br>  • point 2</td></tr>
+<tr><td><code>Write quotes</code><br><code>&gt; To be or not to be</code></td><td>Write quotes<br> <blockquote> To be or not to be </blockquote></td></tr>
+<tr><td>A horizontal rule: <br><br><code>* * * *</code></td><td>A horizontal rule: <br><br>  <hr></td></tr>
+<tr><td><code>To draw a table, draw it</code> <br> <code> | A | B | <br> |---|---|<br> |c1 |c2 |<br> |c3 |c4 | </code></td><td>To draw a table, draw it <br> <table> <tr><th>A</th><th>B</th></tr> <tr><td>c1</td><td>c2</td></tr> <tr><td>c3</td><td>c4</td></tr> </table></td></tr>
+<tr><td><code>&lt;center&gt;</code><br><br><code>Text in the center</code><br><br><code>&lt;/center&gt;</code></td><td><center><br><br>Text in the center<br><br></center></td></tr>
+</tbody>
+</table>
+<p><a href="index.html">Back to Index</a></p>
+<script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
+
+</body>
+</html>
+  
