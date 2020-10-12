@@ -11,8 +11,9 @@
 <body>
 
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/codehighlight.css">
 
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+<!--link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css"-->
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
 
@@ -74,6 +75,7 @@ table, img, blockquote, pre {
 <li class="toc"><a href="#fa-icons-font-awesome">FA Icons (Font Awesome)</a></li>
 <li class="toc"><a href="#tables">Tables</a></li>
 <li class="toc"><a href="#compatibility-processor">Compatibility Processor</a></li>
+<li class="toc"><a href="#yaml">Yaml</a></li>
 <li class="toc"><a href="#miscellaneous">Miscellaneous</a></li>
 </ul>
 </ul>
@@ -94,7 +96,6 @@ table, img, blockquote, pre {
 <p>Epsilon Notes is available on <a href="https://play.google.com/store/apps/details?id=com.ekartoyev.enotes%20&quot;Permalink%20to%20Epsilon%20Notes:%20Markdown%20Editor%20-%20Android%20Apps%20on%20Google%20Play&quot;">Google Play</a><br />
 The developer supports only this distribution platform.</p>
 <p><a href='https://play.google.com/store/apps/details?id=com.ekartoyev.enotes&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img style="width:80;height:auto"  src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a></p>
-</div>
 <h2 id="epsilon-notes-commonmark">Epsilon Notes Commonmark</h2>
 <ul>
 <li><em>Italic</em>, <strong>bold</strong>, <del>strikethrough</del>, <u>underline</u>, <mark>highlight</mark>, <sup>superscript</sup></li>
@@ -122,6 +123,7 @@ The developer supports only this distribution platform.</p>
 <p><a id="sortable_tables"></a></p>
 <ul>
 <li><a href="sortable_tables.html">Sortable tables</a> - In Epsilon Notes you can sort tables using a <code>&lt;sortable&gt;</code> tag.</li>
+<li><a href="checkers.html">Table with checkers</a> - If you add some Javascript, you can use tables to draw a checkerboard</li>
 </ul>
 <h2 id="compatibility-processor">Compatibility Processor</h2>
 <ul>
@@ -129,9 +131,15 @@ The developer supports only this distribution platform.</p>
 <li><a href="custom_markdown_links.html">Custom markdown links</a> - This article describes how to convert custom <code>[links](links.md)</code> to <code>[links](links.md)</code> during the markdown file rendering.</li>
 <li><a href="video_tag.html">Video links with the help of Compatibility Processor</a> - This article describes how you could use the Compatibility Processor to use image links <code>![my video](video.mp4)</code> for inclusion of videos into your documents.</li>
 </ul>
+<h2 id="yaml">Yaml</h2>
+<ul>
+<li><a href="yaml.html">Yaml</a> is a short declaration at the beginning of your Commonmark text. This article contains description of most yamls used in Epsilon Notes.</li>
+</ul>
 <h2 id="miscellaneous">Miscellaneous</h2>
 <ul>
 <li><a href="pinch_to_zoom.html">Pinch to zoom</a> - To make font bigger or smaller in the edit mode, you only need to pinch the screen to zoom in or out.</li>
+<li><a href="file_time_vars.html">Variables to show when the file was changed</a></li>
+<li><a href="why_epsilon.html">Why <strong>Epsilon</strong> Notes?</a> - Here you can read why Epsilon Notes was given this name.</li>
 </ul>
 <script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
 

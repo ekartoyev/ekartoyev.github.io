@@ -1,0 +1,118 @@
+<html lang="en"> 
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+ 
+<title>Checkers Layout</title>
+
+</head> 
+<body>
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/codehighlight.css">
+
+<!--link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css"-->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>* {
+    font-family:sans-serif;
+}
+
+html{
+    line-height:150%;
+    word-wrap:break-word;
+    background:#ECEFF1;
+    color:#1a2327;
+}
+
+em,strong{
+    color:black;
+}
+
+ul{
+    padding-left:1.5em;
+}
+code,pre,blockquote{tab-size:1;}
+
+code,pre,blockquote{
+    background:#CFD8DC;
+    color:#37474F;
+}
+
+pre{
+    padding: 10px 10px 10px 10px;font-family:monospace;
+    font-size:95%;line-height:150%;
+    white-space: pre; white-space: pre-wrap;
+    border-radius:10px;border: 1px solid #B0BEC5;
+}
+
+code{
+    font-family: monospace;font-size: 95%;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #B0BEC5;}noheader th{display:none;}th{background:#CFD8DC;}tbody tr:nth-child(even){background:#CFD8DC;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #B0BEC5;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #B0BEC5;}:active,:focus {outline: none;} a{color:#455A64;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #B0BEC5;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #1a2327;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#1a2327;color:#ECEFF1;
+}
+
+hr, kbd{
+    border:1px solid #B0BEC5;}p{text-align:justify;
+}
+
+table, img, blockquote, pre {
+    box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
+}</style>
+<h1 id="title" style="text-align:center;">Checkers Layout</h1>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<p>Copy the following code to your CommonMark file:</p>
+<pre><code>---
+Footer:&lt;style&gt;checkers table{height:360px;width:360px;margin:auto;padding:0px} checkers td, checkers th{font-size:100%;text-align:center;width:40px;vertical-align:middle;padding:0px}&lt;/style&gt;&lt;script&gt;$(function(){$(&quot;checkers td&quot;).each(function(){if($(this).text().charAt(0)=='+'){$(this).attr(&quot;style&quot;,&quot;background:lightgrey&quot;);$(this).text($(this).text().slice(1))}if($(this).text().charAt(0)=='-'){$(this).attr(&quot;style&quot;,&quot;background:darkgrey&quot;);$(this).text($(this).text().slice(1))}});});&lt;/script&gt;
+...
+
+&lt;checkers&gt;
+
+ 💥| a | b | c | d | e | f | g | h
+---|---|---|---|---|---|---|---|---
+ 8 |+♜|-♞|+♝|-♛|+♚|-♝|+♞|-
+ 7 |-♟|+♟|-♟|+♟|-♟|+♟|-♟|+
+ 6 |+  |-  |+  |-  |+  |-♙|+  |-
+ 5 |-  |+  |-♜|+  |-  |+  |-  |+
+ 4 |+  |-  |+  |-  |+  |-♟|+  |-
+ 3 |-  |+  |-  |+  |-  |+  |-♖|+
+ 2 |+♙|-♙|+♙|-♙|+♙|-♙|+♙|-
+ 1 |-♖|+♘|-♗|+♕|-♔|+♗|-♘|+ 
+
+&lt;/checkers&gt;
+
+</code></pre>
+<p>You can use table to draw a checkerboard.
+Use the first character in the table cell <code>+</code> or <code>-</code> to denote white or black checkers.</p>
+<p>This is the result</p>
+<checkers>
+<table>
+<thead>
+<tr><th>💥</th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th></tr>
+</thead>
+<tbody>
+<tr><td>8</td><td>+♜</td><td>-♞</td><td>+♝</td><td>-♛</td><td>+♚</td><td>-♝</td><td>+♞</td><td>-</td></tr>
+<tr><td>7</td><td>-♟</td><td>+♟</td><td>-♟</td><td>+♟</td><td>-♟</td><td>+♟</td><td>-♟</td><td>+</td></tr>
+<tr><td>6</td><td>+</td><td>-</td><td>+</td><td>-</td><td>+</td><td>-♙</td><td>+</td><td>-</td></tr>
+<tr><td>5</td><td>-</td><td>+</td><td>-♜</td><td>+</td><td>-</td><td>+</td><td>-</td><td>+</td></tr>
+<tr><td>4</td><td>+</td><td>-</td><td>+</td><td>-</td><td>+</td><td>-♟</td><td>+</td><td>-</td></tr>
+<tr><td>3</td><td>-</td><td>+</td><td>-</td><td>+</td><td>-</td><td>+</td><td>-♖</td><td>+</td></tr>
+<tr><td>2</td><td>+♙</td><td>-♙</td><td>+♙</td><td>-♙</td><td>+♙</td><td>-♙</td><td>+♙</td><td>-</td></tr>
+<tr><td>1</td><td>-♖</td><td>+♘</td><td>-♗</td><td>+♕</td><td>-♔</td><td>+♗</td><td>-♘</td><td>+</td></tr>
+</tbody>
+</table>
+</checkers>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<style>checkers table{height:360px;width:360px;margin:auto;padding:0px} checkers td, checkers th{font-size:100%;text-align:center;width:40px;vertical-align:middle;padding:0px}</style><script>$(function(){$("checkers td").each(function(){if($(this).text().charAt(0)=='+'){$(this).attr("style","background:lightgrey");$(this).text($(this).text().slice(1))}if($(this).text().charAt(0)=='-'){$(this).attr("style","background:darkgrey");$(this).text($(this).text().slice(1))}});});</script><script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
+
+</body>
+</html>
+  

@@ -1,0 +1,94 @@
+<html lang="en"> 
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+ 
+<title>File changed Date and time variable</title>
+
+</head> 
+<body>
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/codehighlight.css">
+
+<!--link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css"-->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>* {
+    font-family:sans-serif;
+}
+
+html{
+    line-height:150%;
+    word-wrap:break-word;
+    background:#FAFAFA;
+    color:#171717;
+}
+
+em,strong{
+    color:black;
+}
+
+ul{
+    padding-left:1.5em;
+}
+code,pre,blockquote{tab-size:1;}
+
+code,pre,blockquote{
+    background:#F5F5F5;
+    color:#424242;
+}
+
+pre{
+    padding: 10px 10px 10px 10px;font-family:monospace;
+    font-size:95%;line-height:150%;
+    white-space: pre; white-space: pre-wrap;
+    border-radius:10px;border: 1px solid #EEEEEE;
+}
+
+code{
+    font-family: monospace;font-size: 95%;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #EEEEEE;}noheader th{display:none;}th{background:#F5F5F5;}tbody tr:nth-child(even){background:#F5F5F5;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #EEEEEE;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #EEEEEE;}:active,:focus {outline: none;} a{color:#616161;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #EEEEEE;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #171717;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#171717;color:#FAFAFA;
+}
+
+hr, kbd{
+    border:1px solid #EEEEEE;}p{text-align:justify;
+}
+
+table, img, blockquote, pre {
+    box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
+}</style>
+<h1 id="title" style="text-align:center;">File changed Date and time variable</h1>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<p>If you need to know when your file was last changed, you can use the special EN variables:</p>
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><code>:en-date:</code></td><td>date when the file was last changed</td></tr>
+<tr><td><code>:en-time:</code></td><td>time when the file was last changed</td></tr>
+<tr><td><code>:en-file:</code></td><td>file name</td></tr>
+<tr><td><code>:en-path:</code></td><td>path to the file</td></tr>
+</tbody>
+</table>
+<p>For example:</p>
+<pre><code class="language-none">This is **:en-file:** located at **:en-path:** and it was changed on _:en-date:_ at _:en-time:_
+</code></pre>
+<p>will produce:</p>
+<p>This is <strong>file_time_vars.md</strong> located at <strong>/storage/3366-3066/Notes/Epsilon Notes Site</strong> and it was changed on <em>2020-10-12</em> at <em>18:05:55</em></p>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
+
+</body>
+</html>
+  

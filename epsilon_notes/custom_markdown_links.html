@@ -1,4 +1,4 @@
-<html> 
+<html lang="en"> 
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,15 @@
 </head> 
 <body>
 
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/codehighlight.css">
+
+<!--link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css"-->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
 <style>* {
     font-family:sans-serif;
 }
@@ -17,8 +26,8 @@
 html{
     line-height:150%;
     word-wrap:break-word;
-    background:#E3F2FD;
-    color:#093170;
+    background:#EFEBE9;
+    color:#2b1b18;
 }
 
 em,strong{
@@ -31,36 +40,37 @@ ul{
 code,pre,blockquote{tab-size:1;}
 
 code,pre,blockquote{
-    background:#BBDEFB;
-    color:#1565C0;
+    background:#D7CCC8;
+    color:#4E342E;
 }
 
 pre{
     padding: 10px 10px 10px 10px;font-family:monospace;
     font-size:95%;line-height:150%;
     white-space: pre; white-space: pre-wrap;
-    border-radius:10px;border: 1px solid #90CAF9;
+    border-radius:10px;border: 1px solid #BCAAA4;
 }
 
 code{
     font-family: monospace;font-size: 95%;
-    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #90CAF9;}noheader th{display:none;}th{background:#BBDEFB;}tbody tr:nth-child(even){background:#BBDEFB;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #90CAF9;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #90CAF9;}:active,:focus {outline: none;} a{color:#1976D2;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #90CAF9;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #093170;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#093170;color:#E3F2FD;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #BCAAA4;}noheader th{display:none;}th{background:#D7CCC8;}tbody tr:nth-child(even){background:#D7CCC8;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #BCAAA4;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #BCAAA4;}:active,:focus {outline: none;} a{color:#5D4037;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #BCAAA4;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #2b1b18;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#2b1b18;color:#EFEBE9;
 }
 
 hr, kbd{
-    border:1px solid #90CAF9;}p{text-align:justify;
+    border:1px solid #BCAAA4;}p{text-align:justify;
 }
 
 table, img, blockquote, pre {
     box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
 }</style>
-
 <h1 id="title" style="text-align:center;">Custom markdown links</h1>
 <p style="text-align:center;font-style:italic;">Premium Function</p>
-<p><a href="index.html">Back to index</a></p>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
 <p>Epsilon Notes has a component called &quot;Compatibility Processor&quot; (Compat Processor). It is used to convert some custom elements to standard Commonmark using regexes.</p>
 <p>A regex (regular expression) is a special line that is used to search for certain patterns in the text. There are a lot of regex tutorials on internet.</p>
-<p>Now, suppose you have notes, where a custom <code>[[link]]</code> is used and you would like Epsilon Notes to understand it as a <code>[link][link.md]</code>. This is where you could use the Compat Processor.</p>
+<p>Now, suppose you have notes, where a custom <code>[link](link.md)</code> is used and you would like Epsilon Notes to understand it as a <code>[link][link.md]</code>. This is where you could use the Compat Processor.</p>
 <p>For that purpose, you need to create a <code>.text</code> file, for example <code>my_processor.text</code> and add regexes (regular expressions) and replacement lines to it in the format:</p>
 <pre><code>
 regex
@@ -80,16 +90,16 @@ replacement
 </code></pre>
 <style>img{max-width:500}</style>
 <p>Empty lines and lines starting with <code>//</code> are ignored in that file.</p>
-<p>So, the regex to find parts that look like <code>[[link]]</code> is:</p>
+<p>So, the regex to find parts that look like <code>[link](link.md)</code> is:</p>
 <pre><code>\[\[([^\n\]]+)\]\]
 </code></pre>
 <p>It means, the application should look for parts of the text startwing the <code>[[</code>, that have any letters except for Enter and <code>]</code> one or more times, and that end with <code>]]</code>.</p>
 <p>The replacement line should be:</p>
 <pre><code>[$1]($1.md)
 </code></pre>
-<p>The <code>$1</code> part takes the part in the round brackets in the regex pattern (in our case, it is <code>([^\n\]]+)</code>). The resulting replacement for a text part that looks like <code>[[note]]</code> will be <code>[note](note.md)</code>.</p>
+<p>The <code>$1</code> part takes the part in the round brackets in the regex pattern (in our case, it is <code>([^\n\]]+)</code>). The resulting replacement for a text part that looks like <code>[note](note.md)</code> will be <code>[note](note.md)</code>.</p>
 <p>So, in your <code>my_processor.text</code> you should write:</p>
-<pre><code>// This regex converts [[links]] to [links](links.md)
+<pre><code>// This regex converts [links](links.md) to [links](links.md)
 
 \[\[([^\n\]]+)\]\]
 [$1]($1.md)
@@ -100,9 +110,11 @@ replacement
 <p><img src="images/my_processor_0.jpg" alt="" /></p>
 <p>Then, go to the Menu - Preferences - Compatibility Processor, and paste the filename from the Clipboard to the input window. It should paste the path to your <code>my_processor.text</code> file and should look like <code>file:///storage/emulated/0/Notes/options/my_processor.text</code>.</p>
 <p><img src="images/my_processor_1.jpg" alt="" /></p>
-<p>Et voila! Now, when you open files, all your <code>[[links]]</code> will be replaced with <code>[links](link.md)</code> during the rendering.</p>
+<p>Et voila! Now, when you open files, all your <code>[links](links.md)</code> will be replaced with <code>[links](link.md)</code> during the rendering.</p>
 <p>Note: Compatibility Processor does not change your text in the file. It changes the text only in the memory right before showing you the text.</p>
-<p><a href="index.html">Back to index</a></p>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
 <script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
 
 </body>
