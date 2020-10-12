@@ -1,0 +1,156 @@
+<html lang="en"> 
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+ 
+<title>Compatibility processor</title>
+
+</head> 
+<body>
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>* {
+    font-family:sans-serif;
+}
+
+html{
+    line-height:150%;
+    word-wrap:break-word;
+    background:#E0F2F1;
+    color:#00352c;
+}
+
+em,strong{
+    color:black;
+}
+
+ul{
+    padding-left:1.5em;
+}
+code,pre,blockquote{tab-size:1;}
+
+code,pre,blockquote{
+    background:#B2DFDB;
+    color:#00695C;
+}
+
+pre{
+    padding: 10px 10px 10px 10px;font-family:monospace;
+    font-size:95%;line-height:150%;
+    white-space: pre; white-space: pre-wrap;
+    border-radius:10px;border: 1px solid #80CBC4;
+}
+
+code{
+    font-family: monospace;font-size: 95%;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #80CBC4;}noheader th{display:none;}th{background:#B2DFDB;}tbody tr:nth-child(even){background:#B2DFDB;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #80CBC4;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #80CBC4;}:active,:focus {outline: none;} a{color:#00796B;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #80CBC4;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #00352c;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#00352c;color:#E0F2F1;
+}
+
+hr, kbd{
+    border:1px solid #80CBC4;}p{text-align:justify;
+}
+
+table, img, blockquote, pre {
+    box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
+}</style>
+<h1 id="title" style="text-align:center;">Compatibility processor</h1>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<div align="center"><font color="red">For advanced Markdown users</font></div>
+<p>You can make Epsilon Notes compatible with any other Markdown processor. The Preferences has a function called &quot;Compatibility Processor&quot;.</p>
+<p>Write there regex (regular expression) patterns and replacements that Epsilon Notes will run through your document before rendering. Examples:</p>
+<p>Suppose, you have 100500 notes written in an editor, where a non-standard markdown <code>&lt;:link&gt;</code> was used to denote a link. In Commonmarks, for links we use the standard markdown <code>[link](link.md)</code>.</p>
+<p>If you do not have time to rewrite all your 100500 notes to Commonmark, place the following regex and replacement line in the Compatibility Preprocessor, to treat your <code>&lt;:links&gt;</code> as <code>[links](links.md)</code>:</p>
+<p><code>&lt;:([^&gt;]+)&gt;</code><br />
+<code>[$1]($1.md)</code></p>
+<p>This way, all your &lt;<span></span>:old-links&gt; will internally be replaced with [old-links]<span></span>(old-links.md), and will be processed correspondingly.</p>
+<p><em>A more down-to-earth example.</em> Suppose, you are always making the same mistake writing &quot;Everyone's spelling is defin<font color="red">a</font>tely better th<font color="red">e</font>n mine&quot;, just add the following words to the preprocessor:</p>
+<p>definately<br />
+definitely<br />
+better then<br />
+better than</p>
+<p>Epsilon Notes will process those words before rendering and show them to you as <code>definitely</code> and <code>better than</code>.</p>
+<p>You can add several regex and replacement strings to the preprocessor. The format is:</p>
+<pre><code class="language-none">regex 1
+replacement string 1
+regex 2
+replacement string 2
+...
+</code></pre>
+<p>If you enter a wrong regex, then program will pop up a mistake message.</p>
+<p><strong>Note:</strong> The program does not change your document, when using the preprocessor. It only changes the output.</p>
+<h2 id="yaml-for-compatibility-processor">YAML for Compatibility Processor</h2>
+<p>You can use preprocessing in individual documents. The format is</p>
+<pre><code class="language-none">---
+prerender: |
+ regex 1
+ replacement string 1
+ regex 2
+ replacement string 2
+...
+</code></pre>
+<p>Thus, if you want to substitute all a's with o's in your document, write YAML:</p>
+<pre><code class="language-none">---
+prerender: |
+ a
+ o
+...
+</code></pre>
+<h2 id="formatting-compatibility-processor-contenta">Formatting compatibility processor contenta</h2>
+<p>You can use the following format to fill in the Compatibility Processor in the Preferences:</p>
+<pre><code class="language-none">REGEX1
+              &lt;- empty lines ignored
+REPLACEMENT1   
+              &lt;- empty lines ignored
+              &lt;- empty lines ignored
+// My comment &lt;- comments ignored
+REGEX2
+REPACEMENT2
+</code></pre>
+<p>In other words, all empty lines and lines starting with two backslashes are ignored. Use these to add your comments and to make clear formatting of your regexes. For example,regex for Github emojis:</p>
+<pre><code class="language-none">
+// This is regex for heart
+
+:heart:
+❤
+
+
+// And here's regex for smile
+
+:smile:
+☺
+
+</code></pre>
+<p>If you need to include an <code>enter</code> character in the replacement string, write <code>\n</code>. For example, to make one enter act like a double enter (for enter to move to the next paragraph in any case), you can write the following regex:</p>
+<pre><code class="language-none">\n
+\n\n
+</code></pre>
+<p>☆ <em>Premium function:</em></p>
+<p>Instead of providing regexes in the Preferences, you can provide a link there to the regex file, in the format:</p>
+<pre><code class="language-none">file:///storage/..../my_regex.text
+</code></pre>
+<p>If you would like to customize some Commonmark tags with the Compatibility Processor, but you don't know how, please, join <a href="https://groups.google.com/forum/m/?hl=en#!forum/epsilon-notes">Google Group</a>.</p>
+<p>Also, see some examples in Tips and Tricks.</p>
+<p>You can also read:</p>
+<ul>
+<li><a href="custom_markdown_links.html">Custom markdown links</a> - This article describes how to convert custom <code>[links](links.md)</code> to <code>[links](links.md)</code> during the markdown file rendering.</li>
+<li><a href="video_tag.html">Video tags using compat processor</a> - This article describes how you can use the Compart Processor to add videos to your Commonmark files.</li>
+</ul>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
+
+</body>
+</html>
+  
