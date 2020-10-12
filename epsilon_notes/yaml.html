@@ -1,0 +1,125 @@
+<html lang="en"> 
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+ 
+<title>YAMLs</title>
+
+</head> 
+<body>
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/codehighlight.css">
+
+<!--link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css"-->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>* {
+    font-family:sans-serif;
+}
+
+html{
+    line-height:150%;
+    word-wrap:break-word;
+    background:#1a2327;
+    color:#ECEFF1;
+}
+
+em,strong{
+    color:white;
+}
+
+ul{
+    padding-left:1.5em;
+}
+code,pre,blockquote{tab-size:1;}
+
+code,pre,blockquote{
+    background:#37474F;
+    color:#CFD8DC;
+}
+
+pre{
+    padding: 10px 10px 10px 10px;font-family:monospace;
+    font-size:95%;line-height:150%;
+    white-space: pre; white-space: pre-wrap;
+    border-radius:10px;border: 1px solid #455A64;
+}
+
+code{
+    font-family: monospace;font-size: 95%;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #455A64;}noheader th{display:none;}th{background:#37474F;}tbody tr:nth-child(even){background:#37474F;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #455A64;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #37474F;}:active,:focus {outline: none;} a{color:#B0BEC5;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #455A64;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #ECEFF1;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#ECEFF1;color:#1a2327;
+}
+
+hr, kbd{
+    border:1px solid #455A64;}p{text-align:justify;
+}
+
+table, img, blockquote, pre {
+    box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
+}</style>
+<h1 id="title" style="text-align:center;">YAMLs</h1>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<h1 id="what-is-yaml">What is YAML</h1>
+<p>YAML is a short declaration at the top of your CommonMark document written in the format:</p>
+<pre><code class="language-none">---
+property1: value1
+property2: value2
+property3: value3
+...
+</code></pre>
+<p>For example:</p>
+<pre><code class="language-none">---
+title: My Note
+date:  2017-08-05
+style: indigo
+...
+</code></pre>
+<p><img src="images/yaml_example.png" alt="" /></p>
+<h1 id="all-available-yamls">All available YAMLs</h1>
+<table>
+<thead>
+<tr><th align="left">YAML</th><th align="left">Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td align="left">appbar:blue</td><td align="left">Sets a material color for the application bar</td></tr>
+<tr><td align="left">code:none</td><td align="left">Do not highlight codeblocks</td></tr>
+<tr><td align="left">date:2016-11-20  <a href="#v" name="v-return"><sup>v</sup></a></td><td align="left">Show this date at the top</td></tr>
+<tr><td align="left">Font: <a href="file:///storage/">file:///storage/</a> ... /HelveticaNeue Light.ttf</td><td align="left">Setting a font for the view mode</td></tr>
+<tr><td align="left">heading:autonumber</td><td align="left">Autonumbering headings from level 2</td></tr>
+<tr><td align="left">heading:totop</td><td align="left">Tapping on a heading scrolls the page to top</td></tr>
+<tr><td align="left"><code>prerender:|<br> regex1<br> replacement1<br> regex2<br> replacement2<br></code></td><td align="left">Preprocessing in a document</td></tr>
+<tr><td align="left">mathjax: on</td><td align="left">force MathJax on</td></tr>
+<tr><td align="left">mathjax: off</td><td align="left">force MathJax off</td></tr>
+<tr><td align="left">style:black</td><td align="left">Force black style</td></tr>
+<tr><td align="left">style:day</td><td align="left">Force day style</td></tr>
+<tr><td align="left">style:night</td><td align="left">Force night style</td></tr>
+<tr><td align="left">style:white</td><td align="left">Force white style</td></tr>
+<tr><td align="left">style:user</td><td align="left">Force user style</td></tr>
+<tr><td align="left">style:nostyle</td><td align="left">Turn off any style in the document. You can provide an inline style then.</td></tr>
+<tr><td align="left">style:file.css <a href="#v" name="v-return"><sup>v</sup></a></td><td align="left">Use the file.css from the current directory</td></tr>
+<tr><td align="left">style:<a href="http://../style.css">http://../style.css</a></td><td align="left">Use style from Internet</td></tr>
+<tr><td align="left">style:<a href="file:///../style.css">file:///../style.css</a></td><td align="left">Specify absolute link to the style</td></tr>
+<tr><td align="left">template: path</td><td align="left">Use a template for <a href="html_export.html">html export</a>.</td></tr>
+<tr><td align="left">title:some_name <a href="#v" name="v-return"><sup>v</sup></a></td><td align="left">Generate title. Can be turned off via Preferences</td></tr>
+<tr><td align="left">toc:some_name <a href="#v" name="v-return"><sup>v</sup></a></td><td align="left">Generate Table of contents</td></tr>
+<tr><td align="left">toc-style:inline</td><td align="left">Place ToC in one centered line</td></tr>
+<tr><td align="left">uses:abc</td><td align="left">Turn on ABC Music Notation plugin. <em>See help for advanced users.</em></td></tr>
+</tbody>
+</table>
+<p><a href="#v" name="v-return"><sup>v</sup></a>: The <strong>v</strong>alue is arbitrary</p>
+<center>
+<p><a href="index.html">Back to Index</a></p>
+</center>
+<script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
+
+</body>
+</html>
+  
