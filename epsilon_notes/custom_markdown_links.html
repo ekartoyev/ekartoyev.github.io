@@ -70,7 +70,7 @@ table, img, blockquote, pre {
 </center>
 <p>Epsilon Notes has a component called &quot;Compatibility Processor&quot; (Compat Processor). It is used to convert some custom elements to standard Commonmark using regexes.</p>
 <p>A regex (regular expression) is a special line that is used to search for certain patterns in the text. There are a lot of regex tutorials on internet.</p>
-<p>Now, suppose you have notes, where a custom <code>[link](link.md)</code> is used and you would like Epsilon Notes to understand it as a <code>[link][link.md]</code>. This is where you could use the Compat Processor.</p>
+<p>Now, suppose you have notes, where a custom <code>[[link]]</code> is used and you would like Epsilon Notes to understand it as a <code>[link][link.md]</code>. This is where you could use the Compat Processor.</p>
 <p>For that purpose, you need to create a <code>.text</code> file, for example <code>my_processor.text</code> and add regexes (regular expressions) and replacement lines to it in the format:</p>
 <pre><code>
 regex
@@ -90,16 +90,16 @@ replacement
 </code></pre>
 <style>img{max-width:500}</style>
 <p>Empty lines and lines starting with <code>//</code> are ignored in that file.</p>
-<p>So, the regex to find parts that look like <code>[link](link.md)</code> is:</p>
+<p>So, the regex to find parts that look like <code>[[link]]</code> is:</p>
 <pre><code>\[\[([^\n\]]+)\]\]
 </code></pre>
 <p>It means, the application should look for parts of the text startwing the <code>[[</code>, that have any letters except for Enter and <code>]</code> one or more times, and that end with <code>]]</code>.</p>
 <p>The replacement line should be:</p>
 <pre><code>[$1]($1.md)
 </code></pre>
-<p>The <code>$1</code> part takes the part in the round brackets in the regex pattern (in our case, it is <code>([^\n\]]+)</code>). The resulting replacement for a text part that looks like <code>[note](note.md)</code> will be <code>[note](note.md)</code>.</p>
+<p>The <code>$1</code> part takes the part in the round brackets in the regex pattern (in our case, it is <code>([^\n\]]+)</code>). The resulting replacement for a text part that looks like <code>[[note]]</code> will be <code>[note](note.md)</code>.</p>
 <p>So, in your <code>my_processor.text</code> you should write:</p>
-<pre><code>// This regex converts [links](links.md) to [links](links.md)
+<pre><code>// This regex converts [[links]] to [links](links.md)
 
 \[\[([^\n\]]+)\]\]
 [$1]($1.md)
@@ -110,7 +110,7 @@ replacement
 <p><img src="images/my_processor_0.jpg" alt="" /></p>
 <p>Then, go to the Menu - Preferences - Compatibility Processor, and paste the filename from the Clipboard to the input window. It should paste the path to your <code>my_processor.text</code> file and should look like <code>file:///storage/emulated/0/Notes/options/my_processor.text</code>.</p>
 <p><img src="images/my_processor_1.jpg" alt="" /></p>
-<p>Et voila! Now, when you open files, all your <code>[links](links.md)</code> will be replaced with <code>[links](link.md)</code> during the rendering.</p>
+<p>Et voila! Now, when you open files, all your <code>[[links]]</code> will be replaced with <code>[links](link.md)</code> during the rendering.</p>
 <p>Note: Compatibility Processor does not change your text in the file. It changes the text only in the memory right before showing you the text.</p>
 <center>
 <p><a href="index.html">Back to Index</a></p>
