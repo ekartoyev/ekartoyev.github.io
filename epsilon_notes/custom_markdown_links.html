@@ -60,7 +60,7 @@ table, img, blockquote, pre {
 <p><a href="index.html">Back to index</a></p>
 <p>Epsilon Notes has a component called &quot;Compatibility Processor&quot; (Compat Processor). It is used to convert some custom elements to standard Commonmark using regexes.</p>
 <p>A regex (regular expression) is a special line that is used to search for certain patterns in the text. There are a lot of regex tutorials on internet.</p>
-<p>Now, suppose you have notes, where a custom <code>[[link]]</code> is used and you would like Epsilon Notes to understand it as a <code>[link][link.md]</code>. This is where you could use the Compat Processor.</p>
+<p>Now, suppose you have notes, where a custom <code>[[link]]</code> is used and you would like Epsilon Notes to understand it as a <code>[link](link.md)</code>. This is where you could use the Compat Processor.</p>
 <p>For that purpose, you need to create a <code>.text</code> file, for example <code>my_processor.text</code> and add regexes (regular expressions) and replacement lines to it in the format:</p>
 <pre><code>
 regex
