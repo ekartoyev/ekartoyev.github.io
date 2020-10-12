@@ -1,5 +1,8 @@
 <html> 
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta charset="utf-8">
  
 <title>Sortable Tables</title>
@@ -8,14 +11,14 @@
 <body>
 
 <style>* {
-    font-family:sans-serif
+    font-family:sans-serif;
 }
 
 html{
     line-height:150%;
     word-wrap:break-word;
-    background:#ECEFF1;
-    color:#1a2327;
+    background:#E8F5E9;
+    color:#124116;
 }
 
 em,strong{
@@ -28,35 +31,34 @@ ul{
 code,pre,blockquote{tab-size:1;}
 
 code,pre,blockquote{
-    background:#CFD8DC;
-    color:#37474F;
+    background:#C8E6C9;
+    color:#2E7D32;
 }
 
 pre{
     padding: 10px 10px 10px 10px;font-family:monospace;
     font-size:95%;line-height:150%;
     white-space: pre; white-space: pre-wrap;
-    border-radius:10px;border: 1px solid #B0BEC5;
+    border-radius:10px;border: 1px solid #A5D6A7;
 }
 
 code{
     font-family: monospace;font-size: 95%;
-    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #B0BEC5;}noheader th{display:none;}th{background:#CFD8DC;}tbody tr:nth-child(even){background:#CFD8DC;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #B0BEC5;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #B0BEC5;}:active,:focus {outline: none;} a{color:#455A64;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #B0BEC5;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #1a2327;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#1a2327;color:#ECEFF1;
+    line-height: 150%;white-space: pre;white-space: pre-wrap;} sup{font-size:70%} body{padding:1mm;}table{width:100%;} table,th,td{border-collapse:collapse;padding:10px; vertical-align: top;} table,th,td{border:1px solid #A5D6A7;}noheader th{display:none;}th{background:#C8E6C9;}tbody tr:nth-child(even){background:#C8E6C9;}h1,h2,h3,h4,h5,h6{line-height:150%;text-align:left;}h1#title{border-bottom:5px double #A5D6A7;}a{word-wrap:break-word;text-decoration:none;border-bottom:1px solid #A5D6A7;}:active,:focus {outline: none;} a{color:#388E3C;}img{width:80%;display:block;height:auto;margin-left:auto;margin-right:auto;} img{border:1px solid #A5D6A7;}blockquote {margin:0px 0px 0px 10px;padding: 0px; padding-left:1em;} blockquote{border-left: 5px solid #124116;}center p{text-align:center;}left p{text-align:left;}right p{text-align:right;}img[title=right]{width:40%;float:right;padding:1px;margin-left:10px;}img[title=left]{width:40%;float:left;padding:1px;margin-right:10px;}kbd{padding:0.1em 0.6em;font-size:11px;font-family:Arial,sans-serif;border-radius:4px;display:inline-block;margin:0 0.1em;white-space:nowrap;}kbd{background-color:#124116;color:#E8F5E9;
 }
 
 hr, kbd{
-    border:1px solid #B0BEC5;}p{text-align:justify;
+    border:1px solid #A5D6A7;}p{text-align:justify;
 }
 
 table, img, blockquote, pre {
     box-shadow: 1mm 1mm 2mm rgba(0,0,0,.3);
 }</style>
-
 <h1 id="title" style="text-align:center;">Sortable Tables</h1>
 <p><a href="index.html">Go back to Index</a></p>
-<p>This feature has existed hidden for a long time. I thought I would add it, test it and then if everything is fine, I will tell about it to my users. But ... I forgot. So, and remembered about it nearly a year after adding it... Sorry...</p>
-<p>It is very easy to do:</p>
-<p>Write a table within <code>&lt;sortable&gt;</code> tag like this:</p>
+<p>This feature has existed hidden for a long time. I thought I would add it, test it and then if everything was fine, I would tell about it to my users. But... I completely forgot it. So, I remembered about it nearly a year after adding it... Sorry...</p>
+<p>It is very easy:</p>
+<p>Just write a table within <code>&lt;sortable&gt;</code> tag like this:</p>
 <pre><code>&lt;sortable&gt;
 
 Item   | Price
@@ -68,6 +70,7 @@ Milk   | 4 dollars
 &lt;/sortable&gt;
 </code></pre>
 <p>NOTE: between the html tags and the table there must be an empty line. When you write it, you will get a table in the Render mode:</p>
+<sortable>
 <table>
 <thead>
 <tr><th>Item</th><th align="right">Price</th></tr>
@@ -78,10 +81,11 @@ Milk   | 4 dollars
 <tr><td>Milk</td><td align="right">4 dollars</td></tr>
 </tbody>
 </table>
+</sortable>
 <p>If you press on the headers (<strong>Item</strong> or <strong>Price</strong>), the table lines will be sorted.</p>
 <p><a href="index.html">Go back to Index</a></p>
 <script> $(function(){ function copyToClipboard(text) { var textArea = document.createElement( "textarea" ); textArea.value = text; document.body.appendChild( textArea ); textArea.select(); try { var successful = document.execCommand( 'copy' ); var msg = successful ? 'successful' : 'unsuccessful'; console.log('Copying text command was ' + msg); } catch (err) { console.log('Oops, unable to copy'); } document.body.removeChild( textArea ); } $("pre code").click(function(){ copyToClipboard($(this).text()); }) }); </script>
 
 </body>
 </html>
-    
+  
